@@ -54,8 +54,12 @@
 
 "Problem 6: Integrating with pieces of any shape"
 
+; A single S by using rectangle
+
 (define (rectangle func x1 x2) 
     (abs (* (- x1 x2) (func x1))))
+
+; Iterating function (rectangle)
 
 (define (rectangle-iter func num-steps x1 x2)
     (if (= x1 x2) 
@@ -66,8 +70,12 @@
         )
     )
 
+; A single S by using trapezoid
+
 (define (trapezoid func x1 x2)
     (abs (/ (* (- x1 x2) (+ (func x1) (func x2)) 2))
+
+; Iterating function (trapezoid)
 
 (define (trapezoid-iter func num-steps x1 x2)
     (if (= x1 x2) 
@@ -86,7 +94,7 @@
 
 "Problem 7: Better approximation of pi"
 
-(define function (sqrt (- 1 (expt x 2))))
+(define function (sqrt (- 1 (expt x 2)))) ; Circle function
 
 (define (better-pi num-steps)
     (* 4 (trapezoid-iter function num-steps 0 1)))
